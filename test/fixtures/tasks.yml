@@ -1,0 +1,11 @@
+morning:
+  user: brunello
+  description: Creative task
+  scheduled_on: 2025-04-19
+  block: morning
+
+afternoon:
+  user: brunello
+  description: Administrative task
+  scheduled_on: 2025-04-19
+  block: afternoon

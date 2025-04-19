@@ -7,6 +7,7 @@ class User < ApplicationRecord
   before_create :associate_blocks
 
   has_many :blocks, dependent: :destroy
+  has_many :tasks,  dependent: :destroy
 
   validates :blocks, length: { mininum: 2, maximum: 2 }
 

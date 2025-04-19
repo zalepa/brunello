@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_04_19_142124) do
+ActiveRecord::Schema[8.0].define(version: 2025_04_19_225648) do
   create_table "blocks", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "name", null: false
@@ -18,6 +18,17 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_19_142124) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_blocks_on_user_id"
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.text "description", null: false
+    t.date "scheduled_on", null: false
+    t.integer "block_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["block_id"], name: "index_tasks_on_block_id"
+    t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -33,4 +44,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_19_142124) do
   end
 
   add_foreign_key "blocks", "users"
+  add_foreign_key "tasks", "blocks"
+  add_foreign_key "tasks", "users"
 end

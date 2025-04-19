@@ -1,0 +1,43 @@
+<%= form_with(model: task, class: "contents") do |form| %>
+  <% if task.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-md mt-3">
+      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul class="list-disc ml-6">
+        <% task.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="my-5">
+    <%= form.label :description %>
+    <%= form.textarea :description, rows: 4, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": task.errors[:description].none?, "border-red-400 focus:outline-red-600": task.errors[:description].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :scheduled_on %>
+    <%= form.date_field :scheduled_on, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": task.errors[:scheduled_on].none?, "border-red-400 focus:outline-red-600": task.errors[:scheduled_on].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :block_id, "Block" %>
+    <div class="mt-2 space-y-2">
+      <% @blocks.each do |block| %>
+        <div class="flex items-center">
+          <%= form.radio_button :block_id, block.id, id: "block_#{block.id}", class: "h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500" %>
+          <%= form.label :block_id, block.name, for: "block_#{block.id}", class: "ml-2 text-sm font-medium text-gray-700" %>
+        </div>
+      <% end %>
+    </div>
+    <% if task.errors[:block_id].any? %>
+      <p class="text-red-500 text-sm mt-1"><%= task.errors[:block_id].first %></p>
+    <% end %>
+  </div>
+
+  <div class="inline">
+    <%= form.submit class: "w-full sm:w-auto rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>

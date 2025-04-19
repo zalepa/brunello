@@ -4,6 +4,9 @@ class Block < ApplicationRecord
   before_destroy :ensure_minimum_blocks
 
   validates :order, uniqueness: { scope: :user, message: "must be unique" }
+
+  has_many :tasks, dependent: :destroy
+
   private
 
   def ensure_minimum_blocks
