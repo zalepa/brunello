@@ -1,12 +1,3 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-# Devise fixtures for users
-one:
-  email: user_one@example.com
-  encrypted_password: <%= Devise::Encryptor.digest(User, 'password123') %>
-  # Add other columns if needed, e.g., reset_password_token, remember_created_at, etc.
-
-two:
-  email: user_two@example.com
-  encrypted_password: <%= Devise::Encryptor.digest(User, 'password456') %>
-  # Add other columns if needed
+brunello:
+  email: brunello@example.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>

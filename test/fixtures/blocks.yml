@@ -1,0 +1,9 @@
+morning:
+  user: brunello
+  name: morning
+  order: 0
+
+afternoon:
+  user: brunello
+  name: afternoon
+  order: 1
