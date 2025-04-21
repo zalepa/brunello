@@ -37,6 +37,23 @@
     <% end %>
   </div>
 
+  <div class="my-5">
+    <%= form.label :completed, "Completed" %>
+    <div class="mt-2 space-y-2">
+      <div class="flex items-center">
+        <%= form.radio_button :completed, true, id: "completed_yes", class: "h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500" %>
+        <%= form.label :completed, "Yes", for: "completed_yes", class: "ml-2 text-sm font-medium text-gray-700" %>
+      </div>
+      <div class="flex items-center">
+        <%= form.radio_button :completed, false, id: "completed_no", class: "h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500" %>
+        <%= form.label :completed, "No", for: "completed_no", class: "ml-2 text-sm font-medium text-gray-700" %>
+      </div>
+    </div>
+    <% if task.errors[:completed].any? %>
+      <p class="text-red-500 text-sm mt-1"><%= task.errors[:completed].first %></p>
+    <% end %>
+  </div>
+
   <div class="inline">
     <%= form.submit class: "w-full sm:w-auto rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
   </div>

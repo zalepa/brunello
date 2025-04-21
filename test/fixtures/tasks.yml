@@ -3,9 +3,11 @@ morning:
   description: Creative task
   scheduled_on: 2025-04-19
   block: morning
+  completed: false
 
 afternoon:
   user: brunello
   description: Administrative task
   scheduled_on: 2025-04-19
   block: afternoon
+  completed: true

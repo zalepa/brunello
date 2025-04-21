@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_04_19_225648) do
+ActiveRecord::Schema[8.0].define(version: 2025_04_21_133130) do
   create_table "blocks", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "name", null: false
@@ -27,6 +27,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_19_225648) do
     t.integer "block_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "completed", default: false, null: false
     t.index ["block_id"], name: "index_tasks_on_block_id"
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
