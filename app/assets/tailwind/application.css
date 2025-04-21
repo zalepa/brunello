@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+@theme {
+  --color-cream: #FEFAF6;
+  --color-coal: #8C8783;
+  --color-marshmallow: #FEFAF6;
+  --color-seafoam: #E4EFE7;
+  --color-plant: #99BC85;
+
+  --font-computer: "Iosevka Web", "monospace";
+}

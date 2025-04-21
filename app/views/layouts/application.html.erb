@@ -22,7 +22,7 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="bg-cream text-coal font-computer">
     <%= render "header" %>
 
     <% if notice %>
@@ -35,7 +35,7 @@
       <span class="block sm:inline"><%= alert %></span>
       </div>
     <% end %>
-    <main class="container mx-auto mt-28 px-5 flex flex-col">
+    <main class="container mx-auto mt-2 px-5 flex flex-col">
       <%= yield %>
     </main>
   </body>
