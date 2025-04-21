@@ -2,7 +2,7 @@ class DaysController < ApplicationController
   before_action :authenticate_user!
 
   def show
-    @day = params[:id] || Date.today
+    @day = params[:id] ? Date.parse(params[:id]) : Date.today
     @blocks = current_user.blocks.order(:order)
     @blocks = @blocks.map do |block|
       {

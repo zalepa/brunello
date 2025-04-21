@@ -1,3 +1,27 @@
+<div class="flex justify-between items-center mb-6">
+  <div class="text-left">
+    <%= link_to day_path(@day - 1), class: "block text-gray-600 hover:text-gray-800 flex items-center" do %>
+      <span class="mr-2">&lt;</span>
+      <div>
+        <span class="text-sm uppercase"><%= (@day - 1).strftime("%b").upcase %></span><br>
+        <span class="text-2xl font-bold"><%= (@day - 1).day %></span>
+      </div>
+    <% end %>
+  </div>
+  <div class="text-center">
+    <span class="text-2xl font-bold"><%= @day.strftime("%B %d").upcase %></span>
+  </div>
+  <div class="text-right">
+    <%= link_to day_path(@day + 1), class: "block text-gray-600 hover:text-gray-800 flex items-center justify-end" do %>
+      <div>
+        <span class="text-sm uppercase"><%= (@day + 1).strftime("%b").upcase %></span><br>
+        <span class="text-2xl font-bold"><%= (@day + 1).day %></span>
+      </div>
+      <span class="ml-2">&gt;</span>
+    <% end %>
+  </div>
+</div>
+
 <% @blocks.each do |b| %>
   <div class="container mx-auto p-6">
   <h1 class="text-2xl font-bold mb-4"><%= b[:name] %></h1>
