@@ -2,7 +2,11 @@
   <nav class="container mx-auto px-5 flex justify-between items-center h-16">
     <div class="flex items-center space-x-4">
       <a href="/" class="text-xl font-bold text-gray-900">Brunello</a>
+      <% if user_signed_in? %>
+      <%= link_to "Home", day_path(Date.today), class: "text-blue-600 hover:text-blue-800" %>
+      <% else %>
       <%= link_to "Home", root_path, class: "text-blue-600 hover:text-blue-800" %>
+      <% end %>
       <%= link_to "Tasks", tasks_path, class: "text-blue-600 hover:text-blue-800" %>
     </div>
     <div class="flex items-center space-x-4">

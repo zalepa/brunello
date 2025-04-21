@@ -1,0 +1,29 @@
+<% @blocks.each do |b| %>
+  <div class="container mx-auto p-6">
+  <h1 class="text-2xl font-bold mb-4"><%= b[:name] %></h1>
+   <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <table class="min-w-full table-auto">
+        <thead class="bg-gray-100">
+          <tr>
+            <th class="px-6 py-3 text-left text-sm font-medium text-gray-600 uppercase tracking-wider">Description</th>
+            <th class="px-6 py-3 text-left text-sm font-medium text-gray-600 uppercase tracking-wider">Status</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200">
+          <% b[:tasks].each do |task| %>
+            <tr>
+              <td class="px-6 py-4 text-sm text-gray-800"><%= link_to task.description, task, class: "text-blue-600 hover:text-blue-800" %></td>
+              <td class="px-6 py-4 text-sm text-gray-800">
+                <% if task.completed? %>
+                  <span class="text-green-600 font-semibold">Completed</span>
+                <% else %>
+                  <span class="text-red-600 font-semibold">Pending</span>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<% end %>

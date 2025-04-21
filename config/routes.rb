@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :days, only: [ :show ]
   resources :tasks
   resources :blocks
   devise_for :users
