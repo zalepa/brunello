@@ -1,7 +1,9 @@
 <header class="bg-white shadow">
   <nav class="container mx-auto px-5 flex justify-between items-center h-16">
-    <div class="flex items-center">
+    <div class="flex items-center space-x-4">
       <a href="/" class="text-xl font-bold text-gray-900">Brunello</a>
+      <%= link_to "Home", root_path, class: "text-blue-600 hover:text-blue-800" %>
+      <%= link_to "Tasks", tasks_path, class: "text-blue-600 hover:text-blue-800" %>
     </div>
     <div class="flex items-center space-x-4">
       <% if user_signed_in? %>
@@ -11,8 +13,6 @@
         <%= link_to "Login", new_user_session_path, class: "text-blue-600 hover:text-blue-800" %>
         <%= link_to "Sign Up", new_user_registration_path, class: "text-blue-600 hover:text-blue-800" %>
       <% end %>
-      <%= link_to "Home", root_path, class: "text-blue-600 hover:text-blue-800" %>
-      <%= link_to "Blocks", blocks_path, class: "text-blue-600 hover:text-blue-800" %>
     </div>
   </nav>
 </header>
