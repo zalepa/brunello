@@ -51,3 +51,9 @@
     </div>
   </div>
 <% end %>
+
+<div class="text-center mt-6">
+  <%= link_to new_task_path(scheduled_on: @day), class: "inline-block bg-blue-600 text-white font-bold py-2 px-4 rounded hover:bg-blue-700" do %>
+    Create New Task
+  <% end %>
+</div>
