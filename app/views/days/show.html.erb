@@ -27,7 +27,12 @@
 <div class="flex flex-col lg:flex-row">
   <% @blocks.each do |b| %>
     <div class="container mx-auto p-6">    
-      <h1 class="text-center uppercase tracking-wider font-extralight mb-4 border-b border-b-coal"><%= b[:name] %></h1>
+      <div class="flex justify-between items-center mb-4">
+        <h1 class="text-center uppercase tracking-wider font-extralight flex-1">
+          <%= b[:name] %>
+        </h1>
+        <%= link_to "+", new_task_path(scheduled_on: @day, block_id: b[:block_id]), class: "inline-block text-xl font-bold hover:animate-spin" %>
+      </div>
       <% b[:tasks].each do |task| %>
         <div class="flex flex-row gap-3">
           <%= link_to task_path(task, task: { completed: !task.completed? }), method: :patch, data: { turbo_method: :patch, turbo_action: :advance }, class: "text-coal" do %>
@@ -41,13 +46,9 @@
         </div>
       <% end %>
       
-      <%# buttons %>
-      <div class="text-center mt-6">
-        <%= link_to new_task_path(scheduled_on: @day, block_id: b[:block_id]), class: "inline-block bg-blue-600 text-white font-bold py-2 px-4 rounded hover:bg-blue-700" do %>
-          Create New <%= b[:name] %> Task
-        <% end %>
-      </div>
     </div>
   <% end %>
 </div>
+
+
 
