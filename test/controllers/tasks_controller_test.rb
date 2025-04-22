@@ -22,7 +22,7 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
       post tasks_url, params: { task: { block_id: @task.block_id, description: @task.description, scheduled_on: @task.scheduled_on, completed: false } }
     end
 
-    assert_redirected_to task_url(Task.last)
+    assert_redirected_to day_url(Task.last.scheduled_on)
   end
 
   test "should show task" do
