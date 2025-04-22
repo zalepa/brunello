@@ -37,7 +37,7 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
 
   test "should update task" do
     patch task_url(@task), params: { task: { block_id: @task.block_id, description: @task.description, scheduled_on: @task.scheduled_on, completed: true } }
-    assert_redirected_to day_url(@task.last.scheduled_on)
+    assert_redirected_to day_url(@task.scheduled_on)
   end
 
   test "should destroy task" do

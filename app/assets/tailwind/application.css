@@ -1,11 +1,19 @@
 @import "tailwindcss";
 
 @theme {
-  --color-cream: #FEFAF6;
-  --color-coal: #8C8783;
-  --color-marshmallow: #FEFAF6;
-  --color-seafoam: #E4EFE7;
-  --color-plant: #99BC85;
+  --color-brunello-cream: #FEFAF6;
+  --color-brunello-coal: #8C8783;
+  --color-brunello-marshmallow: #FEFAF6;
+  --color-brunello-seafoam: #E4EFE7;
+  --color-brunello-seaform-dark: #6B786F;
+  --color-brunello-plant: #99BC85;
+  --color-brunello-rust: #C95E5E;
 
   --font-computer: "Iosevka Web", "monospace";
+}
+
+@layer base {
+  a {
+    @apply text-brunello-plant;
+  }
 }

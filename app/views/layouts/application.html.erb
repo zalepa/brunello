@@ -22,21 +22,25 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="bg-cream text-coal font-computer">
+  <body class="bg-cream text-coal font-computer flex flex-col min-h-screen">
     <%= render "header" %>
 
     <% if notice %>
-      <div class="m-3 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+      <div class="md:w-1/2 md:mx-auto m-3 bg-brunello-plant border border-green-800 text-green-700 px-4 py-3 rounded relative" role="alert">
       <span class="block sm:inline"><%= notice %></span>
       </div>
     <% end %>
     <% if alert %>
-      <div class="m-3 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+      <div class="md:w-1/2 md:mx-auto m-3 bg-red-100 border border-brunello-rust text-red-700 px-4 py-3 rounded relative" role="alert">
       <span class="block sm:inline"><%= alert %></span>
       </div>
     <% end %>
-    <main class="container mx-auto mt-2 px-5 flex flex-col">
+    <main class="container mx-auto mt-2 px-5 flex-grow flex flex-col">
       <%= yield %>
     </main>
+
+    <footer class="bg-brunello-coal text-white py-1 text-center text-xs">
+      <p>&copy; <%= Time.current.year %> Purity Labs LLC. All rights reserved.</p>
+    </footer>
   </body>
 </html>

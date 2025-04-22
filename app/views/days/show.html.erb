@@ -1,7 +1,7 @@
 <%# navigation %>
 <div class="flex justify-between items-center mb-6 text-sm border-b border-b-coal pb-2">
   <div class="text-left">
-    <%= link_to day_path(@day - 1), class: "  hover:text-gray-800 flex items-center" do %>
+    <%= link_to day_path(@day - 1), class: "text-brunello-coal hover:text-gray-800 flex items-center" do %>
       <span class="">&lt;</span>
       <div class="flex flex-row gap-1 ml-3 text-center font-bold">
         <span class="uppercase"><%= (@day - 1).strftime("%b").upcase %></span>
@@ -13,7 +13,7 @@
     <span class="font-bold"><%= @day.strftime("%B %d").upcase %></span>
   </div>
   <div class="text-right">
-    <%= link_to day_path(@day + 1), class: "  hover:text-gray-800 flex items-center" do %>
+    <%= link_to day_path(@day + 1), class: "text-brunello-coal hover:text-gray-800 flex items-center" do %>
       <div class="flex flex-row gap-1 mr-3 text-center font-bold">
         <span class="uppercase"><%= (@day - 1).strftime("%b").upcase %></span>
         <span><%= (@day - 1).day %></span>
@@ -37,12 +37,12 @@
         <div class="flex flex-row gap-3">
           <%= link_to task_path(task, task: { completed: !task.completed? }), method: :patch, data: { turbo_method: :patch, turbo_action: :advance }, class: "text-coal" do %>
             <% if task.completed? %>
-              <span class="text-green-600 font-semibold">DONE</span>
+              <span class="text-brunello-plant font-semibold">DONE</span>
             <% else %>
-              <span class="text-red-600 font-semibold">TODO</span>
+              <span class="text-brunello-rust font-semibold">TODO</span>
             <% end %>
           <% end %>
-          <%= link_to task.description, task, class: "text-coal" %>       
+          <%= link_to task.description, task, class: "text-brunello-coal" %>       
         </div>
       <% end %>
       
