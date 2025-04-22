@@ -15,6 +15,7 @@ class TasksController < ApplicationController
   def new
     @task = current_user.tasks.build
     @task.scheduled_on = params[:scheduled_on] if params[:scheduled_on].present?
+    @task.block_id = params[:block_id] if params[:block_id].present?
   end
 
   # GET /tasks/1/edit
