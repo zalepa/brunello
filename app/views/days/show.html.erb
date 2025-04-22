@@ -30,10 +30,12 @@
       <h1 class="text-center uppercase tracking-wider font-extralight mb-4 border-b border-b-coal"><%= b[:name] %></h1>
       <% b[:tasks].each do |task| %>
         <div class="flex flex-row gap-3">
-          <% if task.completed? %>
-            <span class="text-green-600 font-semibold">DONE</span>
-          <% else %>
-            <span class="text-red-600 font-semibold">TODO</span>
+          <%= link_to task_path(task, task: { completed: !task.completed? }), method: :patch, data: { turbo_method: :patch, turbo_action: :advance }, class: "text-coal" do %>
+            <% if task.completed? %>
+              <span class="text-green-600 font-semibold">DONE</span>
+            <% else %>
+              <span class="text-red-600 font-semibold">TODO</span>
+            <% end %>
           <% end %>
           <%= link_to task.description, task, class: "text-coal" %>       
         </div>
