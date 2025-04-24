@@ -1,2 +1,142 @@
-<div>
+<div class="min-h-screen">
+  <!-- Hero Section -->
+  <header class="bg-brunello-rust text-white">
+    <div class="container mx-auto px-6 py-16 max-w-4xl">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">BRUNELLO</h1>
+      <h2 class="text-xl md:text-2xl font-light mb-8">Balance Your Day, Honor Your Time</h2>
+      <div class="border-t border-amber-200 w-24 mb-8"></div>
+      <p class="text-lg md:text-xl mb-8">In the hills of Italian countryside, a philosophy of balanced work was born. Now it's available in your pocket.</p>
+      <%= link_to "Sign up now", new_user_registration_path, class: "inline-block bg-stone-100 text-brunello-rust font-medium px-8 py-3 rounded hover:bg-white transition" %>
+      or 
+      <%= link_to "Login", new_user_session_path, class: "inline-block bg-stone-100 text-brunello-rust font-medium px-8 py-3 rounded hover:bg-white transition" %>
+    </div>
+  </header>
+  <!-- Concept Section -->
+  <section class="py-16 ">
+    <div class="container mx-auto px-6 max-w-4xl">
+      <h2 class="text-3xl text-brunello-rust mb-8">Productivity, Reimagined</h2>
+  <div class="grid md:grid-cols-2 gap-8 mb-12">
+    <div class="bg-amber-50 p-8 rounded-lg border border-amber-100">
+      <h3 class="text-xl font-medium text-amber-900 mb-4">MORNING BLOCK</h3>
+      <p class="text-gray-700">For your most important decisions and deep work</p>
+      <div class="mt-4 flex flex-col space-y-2">
+        <div class="flex items-center">
+          <span class="inline-block w-16 text-xs font-bold bg-amber-200 text-brunello-rust px-2 py-1 rounded">TODO</span>
+          <span class="ml-3 text-gray-800">Strategic planning</span>
+        </div>
+        <div class="flex items-center">
+          <span class="inline-block w-16 text-xs font-bold bg-green-100 text-green-800 px-2 py-1 rounded">DONE</span>
+          <span class="ml-3 text-gray-800 line-through">Key decision making</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="bg-blue-50 p-8 rounded-lg border border-blue-100">
+      <h3 class="text-xl font-medium text-blue-900 mb-4">AFTERNOON BLOCK</h3>
+      <p class="text-gray-700">For routine tasks and review</p>
+      <div class="mt-4 flex flex-col space-y-2">
+        <div class="flex items-center">
+          <span class="inline-block w-16 text-xs font-bold bg-blue-200 text-blue-800 px-2 py-1 rounded">TODO</span>
+          <span class="ml-3 text-gray-800">Follow-up emails</span>
+        </div>
+        <div class="flex items-center">
+          <span class="inline-block w-16 text-xs font-bold bg-green-100 text-green-800 px-2 py-1 rounded">DONE</span>
+          <span class="ml-3 text-gray-800 line-through">Review documents</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <p class="text-gray-700 text-center">No complicated schedules. No overwhelming lists. Just two simple blocks that respect the natural rhythm of your day.</p>
+</div>
+  </section>
+  <!-- Philosophy Section -->
+  <section class="py-16 bg-stone-100">
+    <div class="container mx-auto px-6 max-w-4xl">
+      <h2 class="text-3xl text-brunello-rust mb-8">The Philosophy</h2>
+  <blockquote class="italic text-xl text-gray-700 mb-8 border-l-4 border-brunello-rust pl-4">
+    "Generally speaking, we as a society work too much, and we all need to find the right balance."
+  </blockquote>
+  
+  <p class="text-gray-700 mb-6">
+    Brunello is inspired by the daily routine of Italian entrepreneur Brunello Cucinelli, who believes in working reasonable hours with distinct purpose. Morning hours for critical decisions, afternoons for routine work, and evenings for rest and culture.
+  </p>
+  
+  <p class="text-gray-700">
+    Every task is simply marked as TODO or DONE, creating a satisfying visual record of your progress without the stress of time constraints.
+  </p>
+</div>
+  </section>
+  <!-- How It Works -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-6 max-w-4xl">
+      <h2 class="text-3xl text-brunello-rust mb-8">How It Works</h2>
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+    <div class="text-center p-6">
+      <div class="bg-amber-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+        <span class="text-brunello-rust font-bold">1</span>
+      </div>
+      <h3 class="font-medium mb-2">Start Your Day</h3>
+      <p class="text-gray-600 text-sm">Work on your creative tasks in your Morning Block</p>
+    </div>
+    
+    <div class="text-center p-6">
+      <div class="bg-amber-100  rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+        <span class="text-brunello-rust font-bold">2</span>
+      </div>
+      <h3 class="font-medium mb-2">Take a Break</h3>
+      <p class="text-gray-600 text-sm">Honor the midday pause and reset your mind</p>
+    </div>
+    
+    <div class="text-center p-6">
+      <div class="bg-amber-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+        <span class="text-brunello-rust font-bold">3</span>
+      </div>
+      <h3 class="font-medium mb-2">Complete Your Afternoon</h3>
+      <p class="text-gray-600 text-sm">Finish with lighter, routine tasks, plan for tomorrow</p>
+    </div>
+    
+    <div class="text-center p-6">
+      <div class="bg-amber-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+        <span class="text-brunello-rust font-bold">4</span>
+      </div>
+      <h3 class="font-medium mb-2">End Work on Time</h3>
+      <p class="text-gray-600 text-sm">When your blocks are done, so is your workday</p>
+    </div>
+  </div>
+  
+  <p class="text-gray-700 text-center">No notifications after hours. No endless lists. Just balanced, purposeful productivity.</p>
+</div>
+  </section>
+  <!-- Call to Action -->
+  <section id="download" class="py-16 bg-brunello-rust text-white">
+    <div class="container mx-auto px-6 max-w-4xl text-center">
+      <h2 class="text-3xl mb-6">Join the Movement</h2>
+  <p class="text-lg mb-8 max-w-2xl mx-auto">
+    Brunello isn't just an app—it's a statement about how we should work in the modern world. 
+    Create space for what matters. Respect the silence between tasks. Find dignity in completion rather than constant motion.
+  </p>
+  
+  <div class="flex items-center justify-center space-x-4">
+    <%= link_to "Sign up now", new_user_registration_path, class: "inline-block bg-stone-100 text-brunello-rust font-medium px-8 py-3 rounded hover:bg-white transition" %>
+    <span class="text-white">or</span>
+    <%= link_to "Login", new_user_session_path, class: "inline-block bg-stone-100 text-brunello-rust font-medium px-8 py-3 rounded hover:bg-white transition" %>
+  </div>
+  
+  <blockquote class="italic text-lg mt-12 max-w-2xl mx-auto">
+    "I always follow the rules of Saint Benedict, who said you should look out for your mindful studies, your soulful praying, and, then, lastly, work."
+  </blockquote>
+</div>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-8">
+    <div class="container mx-auto px-6 max-w-4xl text-center">
+      <p>© <%= Date.today.year %> Purity Labs LLC. All rights reserved.</p>
+      <div class="mt-4 flex justify-center space-x-4">
+        <a href="#" class="text-gray-400 hover:text-white">Privacy</a>
+        <a href="#" class="text-gray-400 hover:text-white">Terms</a>
+        <a href="#" class="text-gray-400 hover:text-white">Contact</a>
+      </div>
+    </div>
+  </footer>
 </div>

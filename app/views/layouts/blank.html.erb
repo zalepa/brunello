@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Brunello" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
+    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
+
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+
+    <%# Includes all stylesheet files in app/assets/stylesheets %>
+    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body class="bg-cream text-coal font-computer flex flex-col min-h-screen">
+
+    <% if notice %>
+      <div class="md:w-1/2 md:mx-auto m-3 bg-brunello-plant border border-green-800 text-green-700 px-4 py-3 rounded relative" role="alert">
+      <span class="block sm:inline"><%= notice %></span>
+      </div>
+    <% end %>
+    <% if alert %>
+      <div class="md:w-1/2 md:mx-auto m-3 bg-red-100 border border-brunello-rust text-red-700 px-4 py-3 rounded relative" role="alert">
+      <span class="block sm:inline"><%= alert %></span>
+      </div>
+    <% end %>
+
+    <main class="container mx-auto mt-10 px-5 flex-grow flex flex-col">
+      <%= yield %>
+    </main>
+
+    
+  </body>
+</html>
