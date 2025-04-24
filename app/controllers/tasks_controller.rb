@@ -55,7 +55,7 @@ class TasksController < ApplicationController
     @task.destroy!
 
     respond_to do |format|
-      format.html { redirect_to tasks_path, status: :see_other, notice: "Task was successfully destroyed." }
+      format.html { redirect_to day_path(@task.scheduled_on), status: :see_other, notice: "Task was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -68,7 +68,7 @@ class TasksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def task_params
-      params.require(:task).permit(:user_id, :description, :scheduled_on, :block_id, :completed)
+      params.require(:task).permit(:user_id, :description, :scheduled_on, :block_id, :completed, :notes)
     end
 
     def set_blocks

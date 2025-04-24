@@ -4,7 +4,7 @@
       <a href="/" class=" text-brunello-seaform-dark px-3 text-lg">Brunello</a>
       <% if user_signed_in? %>
         <%= link_to "Home", day_path(Date.today), class: "text-brunello-coal hover:underline hover:underline-offset-4" %>
-        <%= link_to "Tasks", tasks_path, class: "text-brunello-coal hover:underline hover:underline-offset-4" %>
+        <%= link_to "All Tasks", tasks_path, class: "text-brunello-coal hover:underline hover:underline-offset-4" %>
       <% else %>
         <%= link_to "Home", root_path, class: "text-brunello-coal hover:underline hover:underline-offset-4" %>
       <% end %>

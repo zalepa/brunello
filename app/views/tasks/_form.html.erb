@@ -49,6 +49,13 @@
           <%= form.radio_button :completed, false, id: "completed_no", class: "h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500" %>
           <%= form.label :completed, "No", for: "completed_no", class: "ml-2 text-sm font-medium text-gray-700" %>
         </div>
+        <div>
+          <%= form.label :notes, "Notes" %>
+          <%= form.text_area :notes, rows: 4, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": task.errors[:notes].none?, "border-red-400 focus:outline-red-600": task.errors[:notes].any?}] %>
+          <% if task.errors[:notes].any? %>
+            <p class="text-red-500 text-sm mt-1"><%= task.errors[:notes].first %></p>
+          <% end %>
+        </div>
       </div>
       <% if task.errors[:completed].any? %>
         <p class="text-red-500 text-sm mt-1"><%= task.errors[:completed].first %></p>

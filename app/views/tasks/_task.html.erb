@@ -9,4 +9,5 @@
   <span class="text-brunello-coal"><%= task.description %></span>
   <%= link_to "(edit)", [:edit, task], class: 'text-sm' %>       
   <%= link_to "(view)", task, class: 'text-sm' %>
+  <%= link_to "(del)", task, method: :delete, class: 'text-sm text-red-600', data: { turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
 </div>
