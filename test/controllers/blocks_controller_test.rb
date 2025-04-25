@@ -22,7 +22,7 @@ class BlocksControllerTest < ActionDispatch::IntegrationTest
       post blocks_url, params: { block: { name: "New Block", order: 100, user_id: @user.id } }
     end
 
-    assert_redirected_to blocks_url
+    assert_response 404
   end
 
   test "should show block" do
@@ -48,6 +48,6 @@ class BlocksControllerTest < ActionDispatch::IntegrationTest
       delete block_url(@block)
     end
 
-    assert_redirected_to blocks_url
+    assert_response 404
   end
 end

@@ -22,6 +22,7 @@ class BlocksController < ApplicationController
 
   # POST /blocks or /blocks.json
   def create
+
     if current_user.blocks.count >= 2
       respond_to do |format|
         format.html { redirect_to blocks_path, alert: "You cannot have more than two blocks." }
@@ -57,6 +58,7 @@ class BlocksController < ApplicationController
 
   # DELETE /blocks/1 or /blocks/1.json
   def destroy
+
     if current_user.blocks.count > 2
       @block.destroy!
 

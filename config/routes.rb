@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :days, only: [ :show ]
   resources :tasks
-  resources :blocks
+  resources :blocks, except: [ :create, :destroy ]
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -15,4 +15,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "pages#home"
+
+  # BEGIN CUSTOM VANITY ROUTES
+  get "/today" => "days#show", id: "today", as: :today
 end
