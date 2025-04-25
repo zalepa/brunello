@@ -39,6 +39,15 @@
       <%= yield %>
     </main>
 
+    <div class="relative m-10 text-xs text-center bg-slate-100 p-3 pl-10 rounded-md text-slate-600">
+      <div class="w-4 bg-amber-400 absolute h-full left-0 top-0 rounded-tl-md rounded-bl-md"></div>
+      <div class="w-4 bg-black absolute h-full left-4 top-0"></div>
+      <div class="w-4 bg-amber-400 absolute h-full left-8 top-0"></div>
+      <div class="w-4 bg-black absolute h-full left-12 top-0"></div>
+      <p>Warning. Brunello is in alpha and may lose data (temporarily or permanently) or be unavailable at times. </p>
+      <p>Use at own risk.</p>
+    </div>
+
     <footer class="bg-brunello-coal text-white py-1 text-center text-xs">
       <p>&copy; <%= Time.current.year %> Purity Labs LLC. All rights reserved.</p>
     </footer>
