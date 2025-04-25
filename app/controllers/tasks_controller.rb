@@ -4,7 +4,7 @@ class TasksController < ApplicationController
   before_action :set_blocks
   # GET /tasks or /tasks.json
   def index
-    @tasks = current_user.tasks
+    @tasks = current_user.tasks.order(:scheduled_on)
   end
 
   # GET /tasks/1 or /tasks/1.json
