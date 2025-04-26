@@ -1,13 +1,18 @@
 <div class="flex flex-row gap-3">
   <%= link_to task_path(task, task: { completed: !task.completed? }), method: :patch, data: { turbo_method: :patch, turbo_action: :advance }, class: "text-coal" do %>
-    <% if task.completed? %>
-      <span class="text-brunello-plant font-semibold">DONE</span>
-    <% else %>
-      <span class="text-brunello-rust font-semibold">TODO</span>
-    <% end %>
+    <%= render "components/task_status_label", completed: task.completed? %>
   <% end %>
+  <menu class="flex flex-row align-middle gap-1">
+    <%= link_to  [:edit, task] do %>       
+    <%= image_tag "edit.svg", class: "max-h-5"%>
+    <% end %>
+    <%= link_to task do %>       
+      <%= image_tag "eye.svg", class: "max-h-5" %>
+    <% end %>
+    <%= link_to  task, method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?'} do %>       
+      <%= image_tag "x.svg", class: "max-h-5" %>
+    <% end %>
+  </menu>
   <span class="text-brunello-coal"><%= task.description %></span>
-  <%= link_to "(edit)", [:edit, task], class: 'text-sm' %>       
-  <%= link_to "(view)", task, class: 'text-sm' %>
-  <%= link_to "(del)", task, method: :delete, class: 'text-sm text-red-600', data: { turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
+  
 </div>
