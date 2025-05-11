@@ -1,13 +1,13 @@
 morning:
   user: brunello
   description: Creative task
-  scheduled_on: 2025-04-19
+  scheduled_on: <%= Date.today %>
   block: morning
   completed: false
 
 afternoon:
   user: brunello
   description: Administrative task
-  scheduled_on: 2025-04-19
+  scheduled_on: <%= Date.today %>
   block: afternoon
   completed: true

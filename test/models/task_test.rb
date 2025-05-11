@@ -20,4 +20,12 @@ class TaskTest < ActiveSupport::TestCase
     @task.block = nil
     assert_not @task.valid?
   end
+
+  test "#overdue should list overdue tasks" do
+    @overdue_task = @user.tasks.create(description: "Test", scheduled_on: Date.yesterday, block: @block, completed: false)
+    @overdue = Task.overdue(@user.id)
+    assert @overdue.any?
+    assert_equal @overdue.count, 1
+    assert_equal @overdue.first, @overdue_task
+  end
 end

@@ -35,4 +35,12 @@ class UserTest < ActiveSupport::TestCase
     assert_not user.valid?
     assert_includes user.errors[:password], "is too short (minimum is 6 characters)"
   end
+
+  test "should provide overdue tasks" do
+    user = users(:brunello)
+    @overdue_task = user.tasks.create(description: "Test", scheduled_on: Date.yesterday, block: blocks(:morning), completed: false)
+    assert user.overdue.any?
+    assert_equal user.overdue.count, 1
+    assert_equal user.overdue.first, @overdue_task
+  end
 end

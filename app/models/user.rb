@@ -11,6 +11,10 @@ class User < ApplicationRecord
 
   validates :blocks, length: { mininum: 2, maximum: 2 }
 
+  def overdue
+    Task.overdue(id)
+  end
+
   private
 
   def associate_blocks
