@@ -2,9 +2,14 @@ class TasksController < ApplicationController
   before_action :authenticate_user!
   before_action :set_task, only: %i[ show edit update destroy ]
   before_action :set_blocks
+
   # GET /tasks or /tasks.json
   def index
-    @tasks = current_user.tasks.order(:scheduled_on)
+    if params[:before].present? && params[:completed] == "false"
+      @tasks = current_user.tasks.where("scheduled_on < ? AND completed = ?", Date.today, false).order(:scheduled_on)
+    else
+      @tasks = current_user.tasks.order(:scheduled_on)
+    end
   end
 
   # GET /tasks/1 or /tasks/1.json

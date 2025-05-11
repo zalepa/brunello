@@ -12,6 +12,11 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should filter tasks by params" do
+    get tasks_url, params: { before: Date.today.to_s, completed: false }
+    assert_response :success
+  end
+
   test "should get new" do
     get new_task_url
     assert_response :success

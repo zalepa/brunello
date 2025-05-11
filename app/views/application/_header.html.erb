@@ -5,6 +5,12 @@
       <% if user_signed_in? %>
         <%= link_to "Today", today_path, class: "text-brunello-coal hover:underline hover:underline-offset-4" %>
         <%= link_to "All Tasks", tasks_path, class: "text-brunello-coal hover:underline hover:underline-offset-4" %>
+        <% if current_user.overdue.any? %>
+          <%= link_to tasks_path(before: Date.today, completed: false), class: "text-brunello-coal hover:underline hover:underline-offset-4 flex items-center space-x-1" do %>
+        <span>Overdue</span>
+        <span class="inline-block bg-brunello-rust text-white text-xs font-semibold rounded-full px-2 py-1 flex items-center justify-center"><%= current_user.overdue.count %></span>
+          <% end %>
+        <% end %>
       <% else %>
         <%= link_to "Home", root_path, class: "text-brunello-coal hover:underline hover:underline-offset-4" %>
       <% end %>
