@@ -73,3 +73,6 @@ gem "litestream", "~> 0.12.0"
 gem "aws-sdk-s3", "~> 1.183", require: false
 
 gem "hotwire-spark", "~> 0.1.13", group: :development
+
+# Use phlex for view components
+gem "phlex-rails", "~> 2.2"

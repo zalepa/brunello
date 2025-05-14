@@ -25,7 +25,7 @@
   <body class="bg-cream text-coal font-computer flex flex-col min-h-screen">
 
     <% if user_signed_in? %>
-      <%= render "header" %>
+      <%= render Components::Header.new %>
     <% end %>
 
     <% if notice %>
