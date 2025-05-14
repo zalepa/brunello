@@ -24,32 +24,13 @@
 
   <body class="bg-cream text-coal font-computer flex flex-col min-h-screen">
     <%= render Components::Header.new %>
+    <%= render Components::AlertPanel.new %>
 
-    <% if notice %>
-      <div class="md:w-1/2 md:mx-auto m-3 bg-brunello-plant border border-green-800 text-green-700 px-4 py-3 rounded relative" role="alert">
-      <span class="block sm:inline"><%= notice %></span>
-      </div>
-    <% end %>
-    <% if alert %>
-      <div class="md:w-1/2 md:mx-auto m-3 bg-red-100 border border-brunello-rust text-red-700 px-4 py-3 rounded relative" role="alert">
-      <span class="block sm:inline"><%= alert %></span>
-      </div>
-    <% end %>
     <main class="container mx-auto mt-2 px-5 flex-grow flex flex-col">
       <%= yield %>
     </main>
 
-    <div class="relative m-10 text-xs text-center bg-slate-100 p-3 pl-10 rounded-md text-slate-600">
-      <div class="w-4 bg-amber-400 absolute h-full left-0 top-0 rounded-tl-md rounded-bl-md"></div>
-      <div class="w-4 bg-black absolute h-full left-4 top-0"></div>
-      <div class="w-4 bg-amber-400 absolute h-full left-8 top-0"></div>
-      <div class="w-4 bg-black absolute h-full left-12 top-0"></div>
-      <p>Warning. Brunello is in alpha and may lose data (temporarily or permanently) or be unavailable at times. </p>
-      <p>Use at own risk.</p>
-    </div>
-
-    <footer class="bg-brunello-coal text-white py-1 text-center text-xs">
-      <p>&copy; <%= Time.current.year %> Purity Labs LLC. All rights reserved.</p>
-    </footer>
+    <%= render Components::DangerBanner.new %>
+    <%= render Components::Footer.new %>
   </body>
 </html>

@@ -12,7 +12,7 @@ class Components::Header < Components::Base
     link_to "Today", today_path, class: CSS::COAL_LINK
     link_to "All Tasks", tasks_path, class: CSS::COAL_LINK
     if current_user.overdue.any?
-      link_to tasks_path(before: Date.today, completed: false), class: CSS::COAL_LINK +"flex items-center space-x-1" do
+      link_to tasks_path(before: Date.today, completed: false), class: CSS::COAL_LINK + "flex items-center space-x-1" do
         span { "Overdue" }
         span(class: CSS::BADGE) { current_user.overdue.count }
       end
