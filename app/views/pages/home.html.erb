@@ -6,9 +6,11 @@
       <h2 class="text-xl md:text-2xl font-light mb-8">Balance Your Day, Honor Your Time</h2>
       <div class="border-t border-amber-200 w-24 mb-8"></div>
       <p class="text-lg md:text-xl mb-8">In the hills of Italian countryside, a philosophy of balanced work was born. Now it's available in your pocket.</p>
-      <%= link_to "Sign up now", new_user_registration_path, class: "inline-block bg-stone-100 text-brunello-rust font-medium px-8 py-3 rounded hover:bg-white transition" %>
-      or 
-      <%= link_to "Login", new_user_session_path, class: "inline-block bg-stone-100 text-brunello-rust font-medium px-8 py-3 rounded hover:bg-white transition" %>
+      <% unless user_signed_in? %>
+        <%= link_to "Sign up now", new_user_registration_path, class: "inline-block bg-stone-100 text-brunello-rust font-medium px-8 py-3 rounded hover:bg-white transition" %>
+        or 
+        <%= link_to "Login", new_user_session_path, class: "inline-block bg-stone-100 text-brunello-rust font-medium px-8 py-3 rounded hover:bg-white transition" %>
+      <% end %>
     </div>
   </header>
   <!-- Concept Section -->
@@ -110,6 +112,7 @@
 </div>
   </section>
   <!-- Call to Action -->
+  <% unless user_signed_in? %>
   <section id="download" class="py-16 bg-brunello-rust text-white">
     <div class="container mx-auto px-6 max-w-4xl text-center">
       <h2 class="text-3xl mb-6">Join the Movement</h2>
@@ -129,6 +132,7 @@
   </blockquote>
 </div>
   </section>
+  <% end %>
   <!-- Footer -->
   <footer class="bg-gray-900 text-white py-8">
     <div class="container mx-auto px-6 max-w-4xl text-center">
