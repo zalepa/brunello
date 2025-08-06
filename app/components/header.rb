@@ -33,7 +33,7 @@ class Components::Header < Components::Base
   end
 
   def view_template
-    header(class: "container px-1 py-3 mx-auto mb-6 border border-brunello-plant border-t-0 bg-brunello-seafoam") {
+    header(class: "container px-1 py-3 mx-auto mt-3 mb-6 border border-brunello-plant bg-brunello-seafoam") {
       nav(class: "flex justify-between items-center uppercase font-bold") {
         div(class: "flex items-center space-x-4") {
           link_to "Brunello", root_path, class: "text-brunello-seaform-dark px-3 text-lg"
